@@ -33,7 +33,7 @@ jobs:
       - name: Instalando pm2
         run: npm install pm2 -g
         
-      - name: Pm2 delete
+      - name: Pm2 delete 
         run: pm2 delete swimguide-api 
         if: ${{failure()}}
         
