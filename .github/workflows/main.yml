@@ -16,12 +16,6 @@ on:
 jobs:
   build:
     runs-on: self-hosted
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run a one-line script
-        run: echo Iniciando o processo de deploy
-  deploy-dev:
-    runs-on: ubuntu-latest
     environment: 
       name: dev
     steps:
