@@ -21,22 +21,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 11
-        uses: actions/setup-node@v1
-      - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
           java-version: '11'
           distribution: 'adopt'
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots verify
-    
-      - name: Instalando pm2
-        run: npm install pm2 -g
-        
-      - name: Pm2 delete 
-        run: pm2 delete swimguide-api 
-        if: ${{failure()}}
-        
-      - name: Pm2 start
-        run: pm2 start './mvnw spring-boot:run' --name swimguide-api
-
