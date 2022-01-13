@@ -38,5 +38,5 @@ jobs:
         if: ${{failure()}}
         
       - name: Pm2 start
-        run: pm2 start 'mvn spring-boot:run' --name swimguide-api
+        run: pm2 start './mvnw spring-boot:run' --name swimguide-api
         
