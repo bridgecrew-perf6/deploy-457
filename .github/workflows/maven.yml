@@ -25,7 +25,7 @@ jobs:
     
     - name: PM2 STOP
       run: pm2 stop deploy-teste
-      if: ${{failure}}
+      if: ${{failure()}}
       
     - name: PM2 START
       run: pm2 start 'mvn spring-boot:run' --name deploy-teste
