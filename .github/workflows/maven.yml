@@ -22,3 +22,10 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    
+    - name: PM2 STOP
+      run: pm2 stop deploy-teste
+      if: ${{failure}}
+      
+    - name: PM2 START
+      run: pm2 start 'mvn spring-boot:run' --name deploy-teste
