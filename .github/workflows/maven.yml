@@ -27,5 +27,8 @@ jobs:
       run: pm2 stop deploy-teste
       if: ${{failure()}}
       
+    - name: Entrando na pasta do projeto  
+      run: cd /home/evolutionsoftdev/public_html/deploy/actions-runner/_work/deploy/deploy
+      
     - name: PM2 START
       run: pm2 start 'mvn spring-boot:run' --name deploy-teste
